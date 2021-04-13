@@ -1,0 +1,169 @@
+USE [JoelDB]
+GO
+/****** Object:  Table [dbo].[Authorisers]    Script Date: 4/13/2021 3:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Authorisers](
+	[AuthoriserId] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [varchar](50) NULL,
+	[LastName] [varchar](50) NULL,
+	[DateModified] [datetime] NOT NULL,
+ CONSTRAINT [PK_Authorisers] PRIMARY KEY CLUSTERED 
+(
+	[AuthoriserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Claims]    Script Date: 4/13/2021 3:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Claims](
+	[ClaimId] [int] IDENTITY(1,1) NOT NULL,
+	[ClaimDate] [datetime] NULL,
+	[Narration] [varchar](500) NULL,
+	[ReferenceNumber] [varchar](50) NULL,
+	[ClaimPeriod] [varchar](50) NULL,
+	[ContractorId] [int] NULL,
+	[VehicleNumber] [varchar](50) NULL,
+	[Region] [varchar](50) NULL,
+	[ClaimAmount] [decimal](18, 2) NULL,
+	[PreAuditedAmount] [decimal](18, 2) NULL,
+	[Savings] [decimal](18, 2) NULL,
+	[DirectorateReceived] [varchar](50) NULL,
+	[DirectorateDispatched] [varchar](50) NULL,
+	[DateModified] [datetime] NULL,
+ CONSTRAINT [PK_Claims] PRIMARY KEY CLUSTERED 
+(
+	[ClaimId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Contractors]    Script Date: 4/13/2021 3:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Contractors](
+	[ContractorId] [int] NOT NULL,
+	[FirstName] [varchar](50) NULL,
+	[LastName] [varchar](50) NULL,
+	[DateModified] [datetime] NOT NULL,
+ CONSTRAINT [PK_Contractors] PRIMARY KEY CLUSTERED 
+(
+	[ContractorId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Contracts]    Script Date: 4/13/2021 3:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Contracts](
+	[ContractId] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [varchar](500) NOT NULL,
+	[Amount] [decimal](18, 2) NULL,
+	[StartDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NOT NULL,
+	[Duration] [varchar](50) NULL,
+	[ContractorId] [int] NOT NULL,
+	[AdvancedAmount] [decimal](18, 2) NULL,
+	[ClaimAmount] [decimal](18, 2) NULL,
+	[PreAuditedAmount] [decimal](18, 2) NULL,
+	[Savings] [decimal](18, 2) NULL,
+	[DirectorateReceived] [varchar](50) NULL,
+	[DirectorateDispatched] [varchar](50) NULL,
+	[Active] [bit] NOT NULL,
+	[DateModified] [datetime] NOT NULL,
+ CONSTRAINT [PK_Contracts] PRIMARY KEY CLUSTERED 
+(
+	[ContractId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Payments]    Script Date: 4/13/2021 3:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Payments](
+	[PaymentId] [int] NOT NULL,
+	[PaymentDate] [datetime] NULL,
+	[Narration] [varchar](500) NULL,
+	[ClaimAmount] [decimal](18, 2) NULL,
+	[PreAuditedAmount] [decimal](18, 2) NULL,
+	[Savings] [decimal](18, 2) NULL,
+	[DirectorateReceived] [varchar](50) NULL,
+	[DirectorateDispatched] [varchar](50) NULL,
+	[ApproverId] [int] NULL,
+	[Approved] [bit] NOT NULL,
+	[DateModified] [datetime] NOT NULL,
+ CONSTRAINT [PK_Payments] PRIMARY KEY CLUSTERED 
+(
+	[PaymentId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Transfers]    Script Date: 4/13/2021 3:49:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Transfers](
+	[TransfersId] [int] IDENTITY(1,1) NOT NULL,
+	[TransferDate] [datetime] NULL,
+	[Narration] [varchar](500) NULL,
+	[Reference] [varchar](50) NULL,
+	[Recipient] [varchar](50) NULL,
+	[Region] [varchar](50) NULL,
+	[ClaimAmount] [decimal](18, 2) NULL,
+	[PreAuditedAmount] [decimal](18, 2) NULL,
+	[Savings] [decimal](18, 2) NULL,
+	[DirectorateReceived] [varchar](50) NULL,
+	[DirectorateDispatched] [varchar](50) NULL,
+	[Success] [bit] NOT NULL,
+	[DateModified] [datetime] NOT NULL,
+ CONSTRAINT [PK_Transfers] PRIMARY KEY CLUSTERED 
+(
+	[TransfersId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Authorisers] ADD  CONSTRAINT [DF_Authorisers_DateModified]  DEFAULT (getdate()) FOR [DateModified]
+GO
+ALTER TABLE [dbo].[Claims] ADD  CONSTRAINT [DF_Claims_DateModified]  DEFAULT (getdate()) FOR [DateModified]
+GO
+ALTER TABLE [dbo].[Contractors] ADD  CONSTRAINT [DF_Contractors_DateModified]  DEFAULT (getdate()) FOR [DateModified]
+GO
+ALTER TABLE [dbo].[Contracts] ADD  CONSTRAINT [DF_Contracts_Active]  DEFAULT ((1)) FOR [Active]
+GO
+ALTER TABLE [dbo].[Contracts] ADD  CONSTRAINT [DF_Contracts_DateModified]  DEFAULT (getdate()) FOR [DateModified]
+GO
+ALTER TABLE [dbo].[Payments] ADD  CONSTRAINT [DF_Payments_Approved]  DEFAULT ((1)) FOR [Approved]
+GO
+ALTER TABLE [dbo].[Payments] ADD  CONSTRAINT [DF_Payments_DateModified]  DEFAULT (getdate()) FOR [DateModified]
+GO
+ALTER TABLE [dbo].[Transfers] ADD  CONSTRAINT [DF_Transfers_Success]  DEFAULT ((1)) FOR [Success]
+GO
+ALTER TABLE [dbo].[Transfers] ADD  CONSTRAINT [DF_Transfers_DateModified]  DEFAULT (getdate()) FOR [DateModified]
+GO
+ALTER TABLE [dbo].[Claims]  WITH CHECK ADD  CONSTRAINT [FK_Claims_Contractors] FOREIGN KEY([ContractorId])
+REFERENCES [dbo].[Contractors] ([ContractorId])
+GO
+ALTER TABLE [dbo].[Claims] CHECK CONSTRAINT [FK_Claims_Contractors]
+GO
+ALTER TABLE [dbo].[Contracts]  WITH CHECK ADD  CONSTRAINT [FK_Contracts_Contractors] FOREIGN KEY([ContractorId])
+REFERENCES [dbo].[Contractors] ([ContractorId])
+GO
+ALTER TABLE [dbo].[Contracts] CHECK CONSTRAINT [FK_Contracts_Contractors]
+GO
+ALTER TABLE [dbo].[Payments]  WITH CHECK ADD  CONSTRAINT [FK_Payments_Authorisers] FOREIGN KEY([ApproverId])
+REFERENCES [dbo].[Authorisers] ([AuthoriserId])
+GO
+ALTER TABLE [dbo].[Payments] CHECK CONSTRAINT [FK_Payments_Authorisers]
+GO
+
