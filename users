@@ -1,0 +1,43 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.2 (Debian 13.2-1.pgdg100+1)
+-- Dumped by pg_dump version 13.2
+
+-- Started on 2021-08-20 13:43:51 GMT
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3027 (class 0 OID 16913)
+-- Dependencies: 210
+-- Data for Name: Users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Users" ("Username", "FirstName", "LastName", "Email", "RoleName", "DeptID", "Locked", "UserStatus", "LoginAttempt", "DateModified") FROM stdin;
+ABCO252	Christian	Ofori-Achiaw	christian.ofori-achiaw@absa.africa	Administrator	956f61db-868d-47fb-922f-e83187e3d25f	f	t	0	2021-06-01 12:02:13.045001
+ABEB710	Eric	Bright-Abu	eric.bright-abu@absa.africa	Administrator	956f61db-868d-47fb-922f-e83187e3d25f	f	t	0	2021-06-10 01:44:59.274665
+ABIB180	Ivy	Boateng	ivy.boateng@absa.africa	Controller	f0cb4357-1a91-4802-8f1f-80cd52dbd107	f	t	0	2021-06-13 15:12:54.420294
+ABEW299	Evelyn	Wotorchi-Gordon	evelyn.wotorchi-gordon@absa.africa	Controller	f0cb4357-1a91-4802-8f1f-80cd52dbd107	f	t	0	2021-06-19 16:15:25.43406
+ABBA169	Blandina	Aryee	blandina.aryee@absa.africa	Supervisor	f0cb4357-1a91-4802-8f1f-80cd52dbd107	f	t	0	2021-07-19 00:32:49.402283
+ABHS458	Henrietta	Sackey	henrietta.sackey@absa.africa	Supervisor	f0cb4357-1a91-4802-8f1f-80cd52dbd107	f	t	0	2021-07-25 10:01:05.16297
+ABTP385	Thelma	Plange	thelma.p@absa.africa	Controller	f0cb4357-1a91-4802-8f1f-80cd52dbd107	f	t	0	2021-08-04 22:58:08.868418
+\.
+
+
+-- Completed on 2021-08-20 13:43:52 GMT
+
+--
+-- PostgreSQL database dump complete
+--
+

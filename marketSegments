@@ -1,0 +1,56 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.2 (Debian 13.2-1.pgdg100+1)
+-- Dumped by pg_dump version 13.2
+
+-- Started on 2021-08-20 13:42:22 GMT
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3023 (class 0 OID 16878)
+-- Dependencies: 208
+-- Data for Name: MarketSegments; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."MarketSegments" ("Code", "Description", "SegmentStatus", "DateModified") FROM stdin;
+10	PREMIER INTERNATIONAL (OFFSHORE)	t	2021-06-13 15:49:35.682833
+30	CORPORATE	t	2021-06-13 15:50:00.586285
+15	PERSONAL INTERNATIONAL	t	2021-06-13 15:25:59.664829
+40	BUSINESS BANKING	t	2021-06-13 15:28:58.479008
+45	BUSINESS SMALL	t	2021-07-18 09:48:12.149999
+50	SME	t	2021-07-18 09:48:17.454333
+60	PRESTIGE	t	2021-07-18 09:48:28.142383
+65	PERSONAL STANDARD	t	2021-07-18 09:49:05.245577
+75	MASS MARKET	t	2021-07-18 09:49:12.776951
+80	INFORMAL SME	t	2021-07-18 09:49:20.080959
+85	PREMIER	t	2021-07-18 09:49:25.810064
+90	STAFF	t	2021-07-18 09:49:31.145331
+9061	UNDEFINED	t	2021-07-18 09:49:39.309964
+95	INTERNAL ACCOUNTS (OFFSHORE)	t	2021-07-18 09:50:03.176908
+99	INTERNAL	t	2021-07-18 09:50:09.12483
+0	UNCLASSIFIED	t	2021-06-13 15:51:28.627134
+1	UNDEFINED	t	2021-07-18 09:47:03.148505
+2	UNDEFINED	t	2021-07-18 09:47:10.908727
+5	OFFSHORE CORPORATE	t	2021-06-13 15:49:44.264729
+7	UNDEFINED 	t	2021-07-18 09:47:24.256913
+\.
+
+
+-- Completed on 2021-08-20 13:42:22 GMT
+
+--
+-- PostgreSQL database dump complete
+--
+

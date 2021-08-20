@@ -1,0 +1,53 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.2 (Debian 13.2-1.pgdg100+1)
+-- Dumped by pg_dump version 13.2
+
+-- Started on 2021-08-20 13:48:22 GMT
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3023 (class 0 OID 102035)
+-- Dependencies: 216
+-- Data for Name: Actions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Actions" ("ActionID", "ActionName", "ActionStatus", "DateModified") FROM stdin;
+290ce634-a182-4a6c-ac90-aec49c1ab4b0	Unpay Cheque	t	2021-07-29 16:28:34.314301
+3cdc2863-0021-481a-996e-49d6b220c6f3	[2.2] Close Account in Debit	t	2021-07-29 16:35:07.209909
+0531accf-667b-4772-a659-aff8ccdc386f	[2.3] Close Account in Credit	t	2021-07-29 16:35:24.736627
+d3d021b6-7795-4386-98f0-e2a72ee3e40f	[2.5] Cancel Single Cheque	t	2021-07-29 16:36:23.366913
+d39cff5d-ab5e-40cf-b101-414a31e12f9b	[2.6] Add Stop Cheque Range	t	2021-07-29 16:36:47.504214
+56da82b5-8840-4564-8040-8996402721c3	[1.2] Unpay STO - 665	f	2021-07-29 16:39:26.681288
+2a80b116-3e02-48af-b928-2eb56f01171c	[2.4] Close Account [Field 7:5]	f	2021-07-29 16:40:12.468143
+1fae5793-2a97-40f3-a59d-b9c2c3d01346	Formal Demand	t	2021-07-29 18:28:28.326244
+1495ef97-29a0-4bab-8fd0-5826133a9a2d	Simple Demand	t	2021-07-29 18:32:31.6173
+501a7805-95e6-4493-a919-14faac85bd7c	[1.3] Unpay BarclayCard	f	2021-07-29 16:30:55.839203
+5afc90a8-f395-4a21-be92-be8d79eef11f	[1.4] Reverse Transfer	f	2021-07-29 16:34:23.713417
+8a2d1225-1e89-4b8e-b866-c08cfce6573f	[2.1] Hot Card	t	2021-07-29 18:35:07.021409
+f4adb0d7-5ed1-4283-9b27-2af79cb97b2d	Lending Applications	t	2021-08-07 21:25:35.67692
+4f8883cf-ba94-493a-b13c-70c405adb0ff	Telephone	t	2021-08-07 21:25:59.499569
+864c67e0-3e3f-48ac-95a7-2ca60a346bc2	SMS Alert	t	2021-08-07 21:26:05.651601
+f52d484b-1caa-459f-838a-4433587e48a7	I/Card	t	2021-08-07 21:27:44.229512
+62fa67b7-4949-4b33-8fdb-48928dea6c0e	High Net	t	2021-08-07 21:33:08.729398
+\.
+
+
+-- Completed on 2021-08-20 13:48:22 GMT
+
+--
+-- PostgreSQL database dump complete
+--
+
